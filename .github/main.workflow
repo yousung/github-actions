@@ -19,19 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: "https://npm.pkg.github.com"
 
-      - name: Set up SSH Agent
-        uses: webfactory/ssh-agent@v0.1.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Install dependencies
-        run: yarn install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GPR_AUTH_TOKEN }}
-          CI: true
+    - name: Install dependencies
+        run: npm install
 
       - name: Run Build
-        run: yarn build
+        run: npm build
 
-      - name: Run Tests
-        run: yarn run test:ci
+    #   - name: Run Tests
+    #     run: npm run test:ci
