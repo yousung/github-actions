@@ -1,4 +1,4 @@
-name: CI Build
+name: github actions first app
 
 on: [push]
 
