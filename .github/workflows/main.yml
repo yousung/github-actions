@@ -1,4 +1,4 @@
-name: github actions first app
+name: github actions test app
 
 on: [push]
 
